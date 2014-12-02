@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0077)http://www.cs.odu.edu/~toida/nerzic/390teched/regular/reg-lang/Myhill-Nerode/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Myhill-Nerode</title>
+<meta name="description" content="Myhill-Nerode">
+<meta name="keywords" content="Myhill-Nerode">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="http://www.cs.odu.edu/~toida/nerzic/390teched/regular/reg-lang/Myhill-Nerode/Myhill-Nerode.css">
+
+<style type="text/css"></style></head>
+
+<body>
+
+<div align="CENTER">
+<b>Myhill-Nerode Theorem </b> 
+
+</div>
+
+<p>
+<br>
+<br>
+The non-regularity test for languages by Myhill-Nerode is based on the following 
+theorem 
+which is in the contrapositive form of the <a href="http://www.cs.odu.edu/~toida/nerzic/390teched/regular/reg-lang/non-regularity.html"><r>theorem</r></a> used for nonregularity test. Also it 
+is a corollary to Myhill-Nerode theorem:
+<br>
+<br> 
+Let <img width="23" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img1.png" alt="$I_{L}$"> be the followijg relation on <img width="26" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img2.png" alt="$\Sigma^{*}$">: 
+For strings <img width="15" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img3.png" alt="$x$"> and <img width="14" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img4.png" alt="$y$"> of <img width="26" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img2.png" alt="$\Sigma^{*}$">, <img width="43" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img5.png" alt="$x I_{L} y$"> if and only if 
+{<!-- MATH
+ $z \mid xz \in L$
+ -->
+<img width="86" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img6.png" alt="$z \mid xz \in L$">} = {<!-- MATH
+ $z \mid yz \in L$
+ -->
+<img width="85" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img7.png" alt="$z \mid yz \in L$">}, that is, 
+<br>
+<img width="43" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img5.png" alt="$x I_{L} y$"> if and only if
+they are indistinguishable with respect to <img width="17" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img8.png" alt="$L$">. Then the theorem is is staed as follows:
+<br>
+<b>Theorem:</b>
+A language L over alphabet <img width="18" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img9.png" alt="$\Sigma$"> is regular if and only if the set of 
+equivalence classes of <img width="23" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img1.png" alt="$I_{L}$"> is finite.
+<br> 
+<b>Proof of Theorem</b>
+<br>
+<br>
+Necessity
+<br>
+<br>
+Suppose that a language L is regular and two strings, say x and y, are distinguishable 
+with respect to L. Then there is a string z such that xz is in L and yz is not in L 
+(or xz is not in L and yz is in L). This means that if x and y are read by an DFA 
+that recognizes L, the DFA reaches different states. If there are three strings 
+that are distinguished with respect to L, then the DFA reaches three different states 
+after reading those three strings.... 
+Hence if there are infinitely many strings to be distinguished with respect to L, 
+then the DFA must have infinitely many states, which it can not because a DFA must 
+have a finite number of states. 
+<br>
+<br>
+Hence if there is an infinite set of strings which are pairwise distinguishable 
+with respect to a language, then the language is not regular. 
+<br>
+<br>
+Sufficiency
+<br>
+<br>
+Conversely, if the number of classes of strings that are pairwise indistinguishable 
+with respect to a language L is finite, then the language L is regular.
+<br>
+<br>
+To prove this, let [x] denote a class of strings that are indistinguishable 
+from a string x with respect to L. Note that "indistinguishable with respect to L" 
+is an equivalence relation over the set of strings <img width="26" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img2.png" alt="$\Sigma^{*}$"> (denote it by <img width="23" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img1.png" alt="$I_{L}$">) 
+and [x]'s are equivalence classes.
+We will show that a DFA that accepts L can be constructed using these equivalence 
+classes.
+<br>
+<br>
+Let <img width="16" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img10.png" alt="$n$"> be the number of distinct equivalence classes (i.e. the index) of <img width="23" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img1.png" alt="$I_{L}$"> 
+and let <img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img11.png" alt="$x_{0}$">, <img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img12.png" alt="$x_{1}$">, ..., <img width="42" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img13.png" alt="$x_{n-1}$"> be representatives of those distinct 
+equivalence classes.
+Then we construct a DFA (<img width="19" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img14.png" alt="$Q$">, <img width="18" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img9.png" alt="$\Sigma$">, <img width="20" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img15.png" alt="$q_{0}$">, <img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img16.png" alt="$A$">, <img width="14" height="17" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img17.png" alt="$\delta$">) as follows: 
+<br>
+<br>
+<img width="19" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img14.png" alt="$Q$"> = {[<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img11.png" alt="$x_{0}$">], [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img12.png" alt="$x_{1}$">], ..., [<img width="42" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img13.png" alt="$x_{n-1}$">]} 
+<br><img width="20" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img15.png" alt="$q_{0}$"> = [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img11.png" alt="$x_{0}$">], where [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img11.png" alt="$x_{0}$">] =  [<img width="18" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img18.png" alt="$\Lambda$">]. 
+<br><img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img16.png" alt="$A$"> = {[<img width="21" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img19.png" alt="$x_{i}$">] <img width="10" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img20.png" alt="$\mid$"> <img width="57" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img21.png" alt="$x_{i} \in L$"> } 
+<br><img width="14" height="17" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img17.png" alt="$\delta$"> (<img width="57" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img22.png" alt="$[x_{i}], a)$"> = [<img width="30" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img23.png" alt="$x_{i}a$">] for all <img width="51" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img24.png" alt="$a \in \Sigma$">.
+<br>
+<br>
+Let us now show that this machine is in fact a DFA and it accepts the language <img width="17" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img8.png" alt="$L$">.
+<br>
+<br>
+First, note that for every string <img width="15" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img3.png" alt="$x$"> in [<img width="21" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img19.png" alt="$x_{i}$">], <img width="25" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img25.png" alt="$xa$"> is in exactly one 
+equivalence class, namely [<img width="30" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img23.png" alt="$x_{i}a$">]. For, if  <img width="25" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img25.png" alt="$xa$"> and <img width="24" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img26.png" alt="$ya$"> are in different 
+classes for  <img width="60" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img27.png" alt="$x \in [x_{i}$">] and <img width="59" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img28.png" alt="$y \in [x_{i}$">], then <img width="15" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img3.png" alt="$x$"> and <img width="14" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img4.png" alt="$y$"> are distinguishable 
+with respect to L, making them belong to different  [<img width="21" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img19.png" alt="$x_{i}$">]'s.
+Hence <img width="14" height="17" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img17.png" alt="$\delta$"> is a function.
+<br>
+<br>
+Next, let us show that this DFA accepts <img width="17" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img8.png" alt="$L$">.
+For that, first note that  if <img width="57" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img21.png" alt="$x_{i} \in L$">, then every string in [<img width="21" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img19.png" alt="$x_{i}$">] 
+is also in L. 
+<br>
+We then show that for every string <img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img29.png" alt="$w$">, <!-- MATH
+ $\delta^{*}([x_{0}], w)$
+ -->
+<img width="87" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img30.png" alt="$\delta^{*}([x_{0}], w)$"> =  [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img31.png" alt="$x_{k}$">], 
+where  <img width="29" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img32.png" alt="$ [x_{k}$">] is the equivalence class that <img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img29.png" alt="$w$"> belongs to. Our proof is 
+by structural induction on string <img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img29.png" alt="$w$">.
+<br>
+<br>
+Basis Step: <img width="57" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img33.png" alt="$w = \Lambda$">.  
+<br><!-- MATH
+ $\delta^{*}([x_{0}], \Lambda)$
+ -->
+<img width="86" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img34.png" alt="$\delta^{*}([x_{0}], \Lambda)$"> = <!-- MATH
+ $\delta([x_{0}], \Lambda)$
+ -->
+<img width="78" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img35.png" alt="$\delta([x_{0}], \Lambda)$"> by the definition 
+of <img width="21" height="17" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img36.png" alt="$\delta^{*}$"> for DFA. Then by the definition of  <img width="14" height="17" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img17.png" alt="$\delta$">, 
+<!-- MATH
+ $\delta([x_{0}], \Lambda)$
+ -->
+<img width="78" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img35.png" alt="$\delta([x_{0}], \Lambda)$">
+=  [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img11.png" alt="$x_{0}$">]. Hence <!-- MATH
+ $\delta^{*}([x_{0}], \Lambda)$
+ -->
+<img width="86" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img34.png" alt="$\delta^{*}([x_{0}], \Lambda)$"> = <img width="33" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img37.png" alt="$[x_{0}]$">. 
+<br>
+Inductive Step:  Assume <!-- MATH
+ $\delta^{*}([x_{0}], x)$
+ -->
+<img width="83" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img38.png" alt="$\delta^{*}([x_{0}], x)$"> =  [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img31.png" alt="$x_{k}$">], where  
+<img width="63" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img39.png" alt="$ x \in [x_{k}$">]. 
+<br>
+Then for every <img width="51" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img24.png" alt="$a \in \Sigma$">, <!-- MATH
+ $\delta^{*}([x_{0}], xa)$
+ -->
+<img width="93" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img40.png" alt="$\delta^{*}([x_{0}], xa)$"> = 
+<!-- MATH
+ $\delta (\delta^{*}([x_{0}], x), a)$
+ -->
+<img width="125" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img41.png" alt="$\delta (\delta^{*}([x_{0}], x), a)$"> by the definition of <img width="21" height="17" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img36.png" alt="$\delta^{*}$">. 
+<br>
+But <!-- MATH
+ $\delta^{*}([x_{0}], x)$
+ -->
+<img width="83" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img38.png" alt="$\delta^{*}([x_{0}], x)$"> =  [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img31.png" alt="$x_{k}$">] by the induction hypothesis. 
+Hence <!-- MATH
+ $\delta (\delta^{*}([x_{0}], x), a)$
+ -->
+<img width="125" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img41.png" alt="$\delta (\delta^{*}([x_{0}], x), a)$"> = <!-- MATH
+ $\delta ([x_{k}], a)$
+ -->
+<img width="76" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img42.png" alt="$\delta ([x_{k}], a)$"> = [<img width="33" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img43.png" alt="$x_{k}a$">]. 
+<br>
+Hence <!-- MATH
+ $\delta^{*}([x_{0}], xa)$
+ -->
+<img width="93" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img40.png" alt="$\delta^{*}([x_{0}], xa)$"> = [<img width="33" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img43.png" alt="$x_{k}a$">]. 
+<br>
+Hence we have shown that for every string <img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img29.png" alt="$w$"> in <img width="26" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img2.png" alt="$\Sigma^{*}$">, 
+<!-- MATH
+ $\delta^{*}([x_{0}], w)$
+ -->
+<img width="87" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img30.png" alt="$\delta^{*}([x_{0}], w)$"> =  [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img31.png" alt="$x_{k}$">], where  <img width="66" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img44.png" alt="$ w \in [x_{k}$">]. 
+Since <img width="71" height="37" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img45.png" alt="$[x_{k}] \in A$"> if  a string in [<img width="23" height="33" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img31.png" alt="$x_{k}$">] is in <img width="17" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img8.png" alt="$L$">, this means 
+that the DFA accepts <img width="17" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img8.png" alt="$L$">.
+
+</p><p>
+<br>
+<br> 
+
+<b>Myhill-Nerode Theorem</b> 
+<br>
+<br>
+Let us here state Myhill-Nerode Theorem. First some terminology.
+<br>
+An equivalence relation <img width="19" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img46.png" alt="$R$"> on <img width="26" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img2.png" alt="$\Sigma^{*}$"> is said to be right invariant if for every
+<img width="15" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img3.png" alt="$x$">, <!-- MATH
+ $y \in \Sigma^{*}$
+ -->
+<img width="59" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img47.png" alt="$y \in \Sigma^{*}$">, if <img width="39" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img48.png" alt="$x R y$"> then for every <!-- MATH
+ $z \in \Sigma^{*}$
+ -->
+<img width="59" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img49.png" alt="$z \in \Sigma^{*}$">, <img width="59" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img50.png" alt="$xz R yz$">. 
+<br>
+Also an equivalence relation is said to be of finite index, if the set of its 
+equivalence classes is finite.
+<br>
+With these terminology, Myhill-Nerode Theorem can now be stated as follows:
+<br>
+<br>
+The following three statements are equivalent: 
+<br>(1) A language <img width="17" height="16" align="BOTTOM" border="0" src="./Myhill-Nerode_files/img8.png" alt="$L$"> is regular. 
+<br>(2) L is the union of some of the equivalence classes of a right invariant
+equivalent relation of finite index. 
+<br>(3) <img width="23" height="35" align="MIDDLE" border="0" src="./Myhill-Nerode_files/img1.png" alt="$I_{L}$"> is of finite index.
+<br>
+<br>
+Proofs are omitted.
+
+
+
+</p></body></html>
